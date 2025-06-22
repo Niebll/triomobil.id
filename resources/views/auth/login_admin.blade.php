@@ -150,7 +150,7 @@
 <body>
 
     <div class="login-container">
-        <form id="login-form" method="POST" action="">
+<form method="POST" action="{{ route('auth.login') }}">
             {{-- Token Keamanan Laravel --}}
             @csrf
 

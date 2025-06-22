@@ -8,22 +8,18 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     * 
      *
      * @return void
      */
-    public function up()
-    {
-    Schema::create('users', function (Blueprint $table) {
+public function up()
+{
+    Schema::create('car_images', function (Blueprint $table) {
         $table->id();
-        $table->string('name');
-        $table->string('email')->unique();
-        $table->string('password');
-        $table->rememberToken();
+        $table->foreignId('car_id')->constrained()->onDelete('cascade');
+        $table->string('image_url');  // URL gambar mobil (bisa dari internet)
         $table->timestamps();
-    });    }
-
-
+    });
+}
 
     /**
      * Reverse the migrations.
@@ -32,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('car_images');
     }
 };

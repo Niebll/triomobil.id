@@ -4,6 +4,9 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Database\Seeders\UserSeeder;
+use Database\Seeders\CarSeeder;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,5 +23,12 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        // Panggil seeder UserSeeder
+        $this->call(UserSeeder::class);
+        // Panggil seeder CarSeeder
+        $this->call(CarSeeder::class);
+        // Panggil seeder CarImageSeeder
+        $this->call(CarImageSeeder::class);
     }
 }
